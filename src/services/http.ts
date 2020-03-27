@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig } from "axios";
 import qs from "qs";
 import { message } from "antd";
 
-const baseURL = "http://localhost:8080/api";
+const baseURL = "http://127.0.0.1:3001/api";
 
 type Requesta = (url: string, data?: object) => Promise<any>;
 

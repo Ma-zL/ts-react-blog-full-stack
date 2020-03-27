@@ -5,13 +5,13 @@ import { RouteComponentProps } from "react-router-dom";
 // import CountOperation from "@components/CountOperation";
 // import ShowCount from "@components/ShowCount";
 
-import { getArticleList } from "@services/api";
+import { getArticleList, test } from "@services/api";
 import styles from "./index.scss";
 
 const PageA = ({ history }: RouteComponentProps) => {
     const getList = async () => {
         try {
-            const res = await getArticleList();
+            const res = await test({ param: 123 });
             console.log(res);
         } catch (error) {
             console.log(error);
