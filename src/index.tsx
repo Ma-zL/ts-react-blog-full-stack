@@ -10,11 +10,6 @@ import Routers from "./router";
 
 const render = () => {
     ReactDOM.render(
-        // <div className={styles.test}>
-        //     <ViewsTest />
-        //     <SharedTest />
-        //     <Button type="primary">按钮</Button>
-        // </div>,
         <Provider>
             <Routers basename="login page" routers="/login" />
         </Provider>,
