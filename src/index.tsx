@@ -4,8 +4,9 @@ import ReactDOM from "react-dom";
 // import { Button } from "antd";
 // import ViewsTest from "@views/ViewTest";
 // import SharedTest from "@shared/SharedTest";
-import App from "@views/App";
+// import App from "@views/App";
 import Provider from "@store/index";
+import Routers from "./router";
 
 const render = () => {
     ReactDOM.render(
@@ -15,7 +16,7 @@ const render = () => {
         //     <Button type="primary">按钮</Button>
         // </div>,
         <Provider>
-            <App />
+            <Routers basename="login page" routers="/login" />
         </Provider>,
         document.querySelector("#app")
     );

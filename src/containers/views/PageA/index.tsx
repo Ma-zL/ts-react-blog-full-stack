@@ -5,7 +5,7 @@ import { RouteComponentProps } from "react-router-dom";
 // import CountOperation from "@components/CountOperation";
 // import ShowCount from "@components/ShowCount";
 
-import { getArticleList, test } from "@services/api";
+import { test } from "@services/api";
 import styles from "./index.scss";
 
 const PageA = ({ history }: RouteComponentProps) => {

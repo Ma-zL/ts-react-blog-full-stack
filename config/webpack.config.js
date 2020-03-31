@@ -1,10 +1,11 @@
-const { resolve } = require("./utils")
-const jsRules = require("./rules/jsRules")
-const plugins = require("./plugins")
-const styleRules = require("./rules/styleRules")
-const optimization = require("./optimization")
+const { resolve } = require("./utils");
+const jsRules = require("./rules/jsRules");
+const plugins = require("./plugins");
+const styleRules = require("./rules/styleRules");
+const optimization = require("./optimization");
 
-const idDev = process.env.NODE_ENV === "development"
+const idDev = process.env.NODE_ENV === "development";
+const publicPath = "/";
 
 /**
  * @type {import("wbepack").Configuration}
@@ -13,13 +14,13 @@ const idDev = process.env.NODE_ENV === "development"
 module.exports = {
     mode: process.env.NODE_ENV,
     entry: {
-        app: resolve("src/index.tsx")
+        app: resolve("src/index.tsx"),
     },
     output: {
-        path: resolve("dist"),
+        path: resolve("build"),
         filename: idDev ? "[name].js" : "[name].[chunkhash].js",
         chunkFilename: idDev ? "[name].js" : "[name].[chunkhash].js",
-        publicPath: "/"
+        publicPath: publicPath,
     },
     resolve: {
         extensions: [".js", ".jsx", ".ts", ".tsx"],
@@ -31,16 +32,17 @@ module.exports = {
             "@store": resolve("src/store"),
             "@utils": resolve("src/utils"),
             "@assets": resolve("src/assets"),
-            "@components": resolve("src/components")
-        }
+            "@components": resolve("src/components"),
+            "@modules": resolve("src/modules"),
+        },
     },
     devServer: {
-        historyApiFallback: true
+        historyApiFallback: true,
     },
     plugins: [...plugins],
     module: {
-        rules: [...jsRules, ...styleRules]
+        rules: [...jsRules, ...styleRules],
     },
     devtool: idDev ? "source-map" : undefined,
-    optimization: idDev ? {} : optimization
-}
+    optimization: idDev ? {} : optimization,
+};

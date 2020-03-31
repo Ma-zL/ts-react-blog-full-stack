@@ -1,5 +1,5 @@
 !.prettierrc.js
 !.eslintrc.js
 !.stylelintrc.js
-/dist/
+/build/
 /src/**/*.d.ts
