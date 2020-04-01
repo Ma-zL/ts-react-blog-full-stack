@@ -7,14 +7,20 @@ import ReactDOM from "react-dom";
 // import App from "@views/App";
 import Provider from "@store/index";
 import Routers from "./router";
+import { getSettings } from "@commons/settingsHelper";
+import getUrl from "@commons/urlHelper";
 
-const render = () => {
+async function init() {
+    const urls = await getUrl(),
+        settings = await getSettings();
+    return Promise.resolve({ urls, settings });
+}
+
+init().then(() => {
     ReactDOM.render(
         <Provider>
             <Routers basename="login page" routers="/login" />
         </Provider>,
         document.querySelector("#app")
     );
-};
-
-render();
+});

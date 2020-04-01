@@ -15,7 +15,7 @@ module.exports = [
         template: paths.appHtml,
         inject: true,
     }),
-    new InterpolateHtmlPlugin(HtmlWebpackPlugin, env.raw),
+    // new InterpolateHtmlPlugin(HtmlWebpackPlugin, env.raw),
     new MiniCssExtractPlugin({
         filename: "[name].[contenthash].css",
         chunkFilename: "[name].[contenthash].css",

@@ -3,7 +3,7 @@ const jsRules = require("./rules/jsRules");
 const plugins = require("./plugins");
 const styleRules = require("./rules/styleRules");
 const optimization = require("./optimization");
-
+const paths = require("./paths");
 const idDev = process.env.NODE_ENV === "development";
 const publicPath = "/";
 
@@ -34,10 +34,14 @@ module.exports = {
             "@assets": resolve("src/assets"),
             "@components": resolve("src/components"),
             "@modules": resolve("src/modules"),
+            "@api": resolve("src/api"),
+            "@commons": resolve("src/commons"),
         },
     },
     devServer: {
         historyApiFallback: true,
+        port: 8080,
+        contentBase: paths.appPublic,
     },
     plugins: [...plugins],
     module: {

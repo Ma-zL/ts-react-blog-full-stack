@@ -26,7 +26,9 @@
             "@store/*": ["store/*"],
             "@utils/*": ["utils/*"],
             "@assets/*": ["assets/*"],
-            "@modules/*": ["modules/*"]
+            "@modules/*": ["modules/*"],
+            "@api/*": ["api/*"],
+            "@commons/*": ["commons/*"]
         },
         "suppressImplicitAnyIndexErrors": true
     },

@@ -1,0 +1,10 @@
+{
+    "LOGIN-API": {
+        "Address": "/api",
+        "Type": "api",
+        "Path": "/",
+        "URL": {
+            "login": "login"
+        }
+    }
+}
