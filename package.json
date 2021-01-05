@@ -6,7 +6,7 @@
     "publicfolder": "/annotation-gui",
     "dependencies": {
         "antd": "^4.0.4",
-        "axios": "^0.19.2",
+        "axios": "^0.21.1",
         "qs": "^6.9.2",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
